@@ -57,7 +57,6 @@ router.post("/user/login", async (req, res) => {
         role: user.role,
       },
       secretToken,
-      { expiresIn: "7d" }
     );
 
     return res.status(200).json({ token });
