@@ -124,6 +124,7 @@ router.get('/getall', async (req, res) => {
       FROM delivery
       JOIN neighborhoods ON delivery.neighborhood = neighborhoods.neighborhood_id
       WHERE YEAR(start_date) >= YEAR(NOW())
+      ORDER BY start_date ASC
     `;
     const results = await runQuery(sql);
     return res.status(200).json(results);
